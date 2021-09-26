@@ -21,8 +21,7 @@ public class ServerPush {
     private String pushToken = null;
 
     public void pushMsg(String text, String desp) {
-	return;
-        /**if (pushToken == null) {
+        if (pushToken == null) {
             pushToken = ServerVerify.getFtkey();
         }
 
@@ -41,18 +40,17 @@ public class ServerPush {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
     }
 
     public static void doServerPush() {
-	logger.info("未配置server酱,本次执行不推送日志到微信");
-        /**if (ServerVerify.getFtkey() != null) {
+        if (ServerVerify.getFtkey() != null) {
             ServerPush serverPush = new ServerPush();
             serverPush.pushMsg("BILIBILI-HELPER任务简报", LoadFileResource.loadFile("logs/daily.log"));
         } else {
             logger.info("未配置server酱,本次执行不推送日志到微信");
-        }*/
+        }
     }
 
     public void addOtherMsg(String msg) {
