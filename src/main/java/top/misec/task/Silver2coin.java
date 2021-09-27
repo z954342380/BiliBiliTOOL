@@ -24,7 +24,7 @@ public class Silver2coin implements Task {
     @Override
     public void run() {
 
-        /**JsonObject resultJson = HttpUtil.doGet(ApiList.silver2coin);
+        JsonObject resultJson = HttpUtil.doGet(ApiList.silver2coin);
         int responseCode = resultJson.get(STATUS_CODE_STR).getAsInt();
         if (responseCode == 0) {
             logger.info("银瓜子兑换硬币成功");
@@ -35,14 +35,14 @@ public class Silver2coin implements Task {
         JsonObject queryStatus = HttpUtil.doGet(ApiList.getSilver2coinStatus).get("data").getAsJsonObject();
         double silver2coinMoney = oftenAPI.getCoinBalance();
         logger.info("当前银瓜子余额: " + queryStatus.get("silver").getAsInt());
-        logger.info("兑换银瓜子后硬币余额: " + silver2coinMoney);*/
+        logger.info("兑换银瓜子后硬币余额: " + silver2coinMoney);
 
         /*
         兑换银瓜子后，更新userInfo中的硬币值
-         
+         */
         if (userInfo != null) {
             userInfo.setMoney(silver2coinMoney);
-        }*/
+        }
     }
 
     @Override
